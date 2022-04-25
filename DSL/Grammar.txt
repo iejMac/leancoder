@@ -1,0 +1,7 @@
+expression
+  : INT
+  | expression '*' expression
+  | expression '+' expression
+  | expression '-' expression
+  | expression '/' expression
+;
