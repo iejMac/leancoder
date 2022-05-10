@@ -18,8 +18,6 @@ def gen_tasks(n, max_length=5, max_steps=5, val_range=(-5, 5)):
     seq = random.choices(grammar, k=seq_len)
 
     l_y = l_x.copy()
-    # print(l_y)
-    # print(seq)
     for action in seq:
       l_y = (eval(action))(l_y)
     
