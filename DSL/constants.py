@@ -1,4 +1,0 @@
-NULL = 513
-INTMIN = -256
-INTMAX = 256
-
