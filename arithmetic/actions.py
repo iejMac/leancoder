@@ -15,3 +15,6 @@ def reverse(l_x):
 def sort(l_x):
   l_x.sort()
   return l_x
+
+def filter(l_x):
+  return [x for x in l_x if x >= 0.0]
