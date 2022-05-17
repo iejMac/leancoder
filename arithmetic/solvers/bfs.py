@@ -28,16 +28,24 @@ class BFSSolver:
     queue = [s_0]
     visited = []
 
-    actions = grammar
+    list_actions = list_grammar
+    list_actions.append("sum_list")
     while True: # while solution not found
       # Go over queue and add next layer of nodes
       cur_queue_len = len(queue)
       for i in range(cur_queue_len):
         s_n = copy(queue[i])
         visited.append(s_n)
-        
+        actions = list_actions
+
+        if (type(s_n.s) is int):
+            actions = int_grammar
+
         for a in actions:
-          s_np1 = Node(eval(a)(s_n.s.copy()), s_n, a)
+          state = s_n.s
+          if (type(state) is list):
+              state = s_n.s.copy()
+          s_np1 = Node(eval(a)(state), s_n, a)
           # Check if in terminal state
           if s_np1.s == s_T.s:
             return s_np1.get_path()

@@ -18,3 +18,18 @@ def sort(l_x):
 
 def filter(l_x):
   return [x for x in l_x if x >= 0.0]
+
+def sum_list(l_x):
+    return sum(l_x)
+# integer actions
+def add_1(num):
+    return num + 1
+
+def sub_1(num):
+    return num - 1
+
+def mul_2(num):
+    return num * 2
+
+def div_2(num):
+    return num // 2
