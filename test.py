@@ -8,5 +8,5 @@ solver = BFSSolver()
 
 sol = solver.solve(x, y)
 print(x, y)
-print(seq)
-print(sol)
+print(*seq)
+print(*sol)
