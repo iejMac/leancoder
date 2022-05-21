@@ -15,7 +15,6 @@ solver = BFSSolver()
 
 tasks = gen_random(5)
 x, seq, y = tasks[0]
-
-sol = solver.solve(x,y)
 print(x,y)
+sol = solver.solve(x,y)
 print(*sol)

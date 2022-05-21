@@ -34,8 +34,7 @@ def gen_random(n, max_length=5, max_steps=3, val_range=(-5,5)):
     l_x = [random.randint(*val_range) for _ in range(list_len)]
     new_list = []
     for i in range(list_len):
-      val = l_x[i]
-      new_list.append(random.randint(val, val+1))
+      new_list.append(random.randint(-5,5))
 
     l_y = new_list
     tasks.append((l_x, "random", l_y))

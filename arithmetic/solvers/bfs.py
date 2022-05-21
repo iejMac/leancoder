@@ -1,5 +1,6 @@
 from arithmetic.DSL.grammar import available_actions
 from copy import deepcopy
+import random
 
 
 class Node:
@@ -41,16 +42,18 @@ class BFSSolver:
           return []
         actions = available_actions(s_n.s)
         for a in actions:
+          # if Action is single value change, go through all indices of list
           if (a.name[-1] == "b"):
+            val = random.randint(1,5)
             for index in range(0, len(s_n.s)):
-              s_np1 = Node(a(deepcopy(s_n.s), index), s_n, a)
+              s_np1 = Node(a(deepcopy(s_n.s), index, val), s_n, a)
               # Check if in terminal state
               if s_np1.s == s_T.s:
                 return s_np1.get_path()
               elif s_np1 not in visited:
                 queue.append(s_np1)
           else:
-            s_np1 = Node(a(s_n.s, None), s_n, a)
+            s_np1 = Node(a(s_n.s, None, None), s_n, a)
             # Check if in terminal state
             if s_np1.s == s_T.s:
               return s_np1.get_path()
