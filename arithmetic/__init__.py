@@ -3,3 +3,4 @@ from .DSL.actions import *
 
 # Import task generation
 from .gen_tasks import gen_tasks
+from .gen_tasks import gen_random

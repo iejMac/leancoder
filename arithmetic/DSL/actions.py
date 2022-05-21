@@ -9,8 +9,11 @@ class Action():
     self.output_type = output_type
     self.function = function
 
-  def __call__(self, state):
-    return self.output_type(self.function(state))
+  def __call__(self, state, index):
+    if (index is not None):
+      return self.output_type(self.function(state, index))
+    else:
+      return self.output_type(self.function(state))
 
   def __str__(self):
     return self.name
